@@ -1,35 +1,43 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Product Browser App (Kotlin Multiplatform)
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+This project is a **Kotlin Multiplatform Mobile (KMM)** application built using **Compose Multiplatform**, targeting **Android and iOS**.
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
-
-### Build and Run Android Application
-
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
-
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+The app displays products from a public API and allows users to browse product listings and view product details.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+# Business Requirements
+
+
+The application allows users to:
+
+• View a list of products with **title, price, rating, and thumbnail image**
+
+• Tap a product to see **detailed product information**
+
+• Search products using **API-based search**
+
+• View product information including:
+  - Title
+  - Description
+  - Brand
+  - Price
+  - Rating
+
+---
+
+# Technology Stack
+
+- Kotlin Multiplatform Mobile (KMM)
+- Compose Multiplatform
+- Ktor Client (API calls)
+- kotlinx.serialization (JSON parsing)
+- StateFlow (state management)
+- Clean Architecture
+
+---
+
+# Project Architecture
+
+The project follows **Clean Architecture** with three main layers:
+
